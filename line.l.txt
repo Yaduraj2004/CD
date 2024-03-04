@@ -1,0 +1,13 @@
+%{
+int In=0;
+%}
+%%
+.* {In++;printf(yyout,"\n%d:%s,In,yytext);}
+%%
+int yywarp(){}
+int main()
+{
+yyin=fopen("simple.txt",r");
+yyout=fopen("out.txt","w");
+yylex();
+}

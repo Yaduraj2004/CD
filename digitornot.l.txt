@@ -1,0 +1,13 @@
+
+%{
+#include<stdio.h>
+%}
+%%
+[0-9]+[0-9]*\.[0-9]+ { printf("\n%s DIGIT",yytext);}
+.+ {printf("\n%s IS NOT A DIGIT",yytext);}
+%%
+int yywarp(){}
+int main()
+{
+yylex();
+}
